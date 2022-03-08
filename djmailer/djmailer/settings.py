@@ -76,10 +76,8 @@ WSGI_APPLICATION = 'djmailer.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'djmailer',
-        'USER': 'djmailer',
-        'PASSWORD': 'suP3rS3CR3t!X$%^',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
