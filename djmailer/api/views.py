@@ -1,8 +1,11 @@
-from django.http.response import JsonResponse
+from rest_framework.views import APIView
+from rest_framework.views import Response
 
 
-def hello_world(request):
-    return JsonResponse({"message": "hello world!"})
+class HelloWorldView(APIView):
+    
+    def get(self,request):
+        return Response({"message": "hello world!"})
      
 
 
