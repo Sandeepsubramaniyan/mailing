@@ -5,20 +5,8 @@ from .models import Subscriber
 
 
 class SubscriberView(ListAPIView,CreateAPIView):
-    
-    def get(self,request):
-        all_subscribers = Subscriber.objects.all()
-        serialized_subscribers =  SubscriberSerializer(all_subscribers,many=True)     
-        return Response(serialized_subscribers.data)
-    
-    def post(self,request):
-        serializer=SubscriberSerializer(data=request.data)
-        if serializer.is_valid():
-            subscriber_instance = Subscriber.objects.create(**serializer.data)
-        
-            return Response({"message":"Created Subscriber{}".format(subscriber_instance.id)})
-        else:
-            return Response({"errors":serializer.errors})
+    serializer_class = SubscriberSerializer
+    queryset = Subscriber.objects.all()
      
 
 
