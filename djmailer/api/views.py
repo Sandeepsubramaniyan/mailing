@@ -9,7 +9,7 @@ class HelloWorldView(APIView):
         return Response({"message": "hello world!"})
     
     def post(self,request):
-        serializer=HelloWorldSerializer(data=request.data)
+        serializer=SubscriberSerializer(data=request.data)
         if serializer.is_valid():
             valid_data = serializer.data
             
