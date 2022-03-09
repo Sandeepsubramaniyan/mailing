@@ -1,6 +1,7 @@
 from rest_framework.views import APIView
 from rest_framework.views import Response
 from .serializers import SubscriberSerializer
+from .models import Subscriber
 
 
 class HelloWorldView(APIView):
