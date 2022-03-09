@@ -1,6 +1,7 @@
-from django.conf.urls import url
+from rest_framework.routers import SimpleRouter
 from .views import SubscriberViewSet
 
-urlpatterns = [
-    url(r'^subscriber',SubscriberViewSet.as_view(),name="subscriber")
-]
+router = SimpleRouter()
+router.register("Subscribers",SubscriberViewSet)
+
+urlpatterns = router.urls
