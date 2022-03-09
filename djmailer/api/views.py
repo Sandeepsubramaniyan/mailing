@@ -1,6 +1,6 @@
 from rest_framework.views import APIView
 from rest_framework.views import Response
-from .serializers import HelloWorldSerializer
+from .serializers import SubscriberSerializer
 
 
 class HelloWorldView(APIView):
