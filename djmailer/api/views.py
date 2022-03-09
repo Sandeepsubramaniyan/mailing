@@ -4,7 +4,7 @@ from .serializers import SubscriberSerializer
 from .models import Subscriber
 
 
-class SubscriberView(APIView):
+class SubscriberView(ListAPIView,CreateAPIView):
     
     def get(self,request):
         all_subscribers = Subscriber.objects.all()
