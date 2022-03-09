@@ -1,9 +1,9 @@
-from rest_framework.generics import ListCreateAPIView
+from rest_framework.viewsets import ModelViewSet
 from .serializers import SubscriberSerializer
 from .models import Subscriber
 
 
-class SubscriberView(ListCreateAPIView):
+class SubscriberViewSet(ModelViewSet):
     serializer_class = SubscriberSerializer
     queryset = Subscriber.objects.all()
      
