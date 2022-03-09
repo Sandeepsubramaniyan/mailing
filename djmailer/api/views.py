@@ -7,7 +7,9 @@ from .models import Subscriber
 class SubscriberView(APIView):
     
     def get(self,request):
-        return Response({"message": "hello world!"})
+        all_subscribers = Subscriber.objects.all()
+        serialized_subscribers =  SubscriberSerializer(all_subscribers,many=True)     
+        return Response(serialized_subscribers.data)
     
     def post(self,request):
         serializer=SubscriberSerializer(data=request.data)
