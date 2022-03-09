@@ -1,5 +1,4 @@
 from rest_framework.generics import ListAPIView, CreateAPIView
-from rest_framework.views import Response
 from .serializers import SubscriberSerializer
 from .models import Subscriber
 
