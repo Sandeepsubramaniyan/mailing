@@ -1,6 +1,6 @@
 from django.conf.urls import url
-from .views import SubscriberView
+from .views import SubscriberViewSet
 
 urlpatterns = [
-    url(r'^subscriber',SubscriberView.as_view(),name="subscriber")
+    url(r'^subscriber',SubscriberViewSet.as_view(),name="subscriber")
 ]
