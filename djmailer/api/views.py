@@ -4,7 +4,7 @@ from .serializers import SubscriberSerializer
 from .models import Subscriber
 
 
-class HelloWorldView(APIView):
+class SubscriberView(APIView):
     
     def get(self,request):
         return Response({"message": "hello world!"})
@@ -12,12 +12,9 @@ class HelloWorldView(APIView):
     def post(self,request):
         serializer=SubscriberSerializer(data=request.data)
         if serializer.is_valid():
-            valid_data = serializer.data
-            
-            name = valid_data.get("name")
-            age = valid_data.get("age")
+            subscriber_instance = Subscriber.objects.create(**serializer.data)
         
-            return Response({"message":"Hello {}! you are {} years old".format(name,age)})
+            return Response({"message":"Created Subscriber{}".format(subscriber_instance.id)})
         else:
             return Response({"errors":serializer.errors})
      
