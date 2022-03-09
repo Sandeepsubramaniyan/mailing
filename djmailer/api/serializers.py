@@ -1,4 +1,5 @@
 from rest_framework import serializers
+from .models import Subscriber
 
 class SubscriberSerializer(serializers.Serializer):
     name = serializers.CharField(max_length=50)
